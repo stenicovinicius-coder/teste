@@ -1,0 +1,404 @@
+<!DOCTYPE html> <html lang="pt-BR"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Meu Site</title>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        background: #f4f4f4;
+        color: #222;
+    }
+
+    /* MENU */
+    header {
+        background: #111827;
+        color: white;
+        padding: 20px 8%;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+    }
+
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    nav h1 {
+        color: #38bdf8;
+    }
+
+    nav ul {
+        display: flex;
+        gap: 25px;
+        list-style: none;
+    }
+
+    nav a {
+        color: white;
+        text-decoration: none;
+        transition: 0.3s;
+    }
+
+    nav a:hover {
+        color: #38bdf8;
+    }
+
+    /* INÍCIO */
+    .hero {
+        min-height: 85vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 30px;
+        color: white;
+
+        background:
+            linear-gradient(
+                135deg,
+                rgba(15, 23, 42, 0.95),
+                rgba(37, 99, 235, 0.9)
+            );
+    }
+
+    .hero h2 {
+        font-size: 3.5rem;
+        margin-bottom: 20px;
+    }
+
+    .hero p {
+        font-size: 1.2rem;
+        margin-bottom: 30px;
+    }
+
+    .botao {
+        display: inline-block;
+        padding: 14px 28px;
+        background: #38bdf8;
+        color: #082f49;
+        border: none;
+        border-radius: 8px;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    .botao:hover {
+        background: #7dd3fc;
+        transform: translateY(-3px);
+    }
+
+    /* SEÇÕES */
+    section {
+        padding: 80px 8%;
+    }
+
+    .sobre {
+        max-width: 900px;
+        margin: auto;
+        text-align: center;
+    }
+
+    .sobre h2,
+    .contato h2 {
+        font-size: 2.2rem;
+        margin-bottom: 20px;
+    }
+
+    .sobre p {
+        line-height: 1.8;
+        color: #555;
+    }
+
+    /* CARDS */
+    .servicos {
+        background: #e5e7eb;
+        text-align: center;
+    }
+
+    .servicos h2 {
+        font-size: 2.2rem;
+        margin-bottom: 40px;
+    }
+
+    .cards {
+        max-width: 1100px;
+        margin: auto;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 25px;
+    }
+
+    .card {
+        background: white;
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        transition: 0.3s;
+    }
+
+    .card:hover {
+        transform: translateY(-8px);
+    }
+
+    .card h3 {
+        color: #2563eb;
+        margin-bottom: 15px;
+    }
+
+    .card p {
+        color: #666;
+        line-height: 1.6;
+    }
+
+    /* CONTATO */
+    .contato {
+        max-width: 700px;
+        margin: auto;
+        text-align: center;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        margin-top: 30px;
+    }
+
+    input,
+    textarea {
+        width: 100%;
+        padding: 15px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        font-size: 16px;
+        outline: none;
+    }
+
+    input:focus,
+    textarea:focus {
+        border-color: #2563eb;
+    }
+
+    textarea {
+        height: 150px;
+        resize: vertical;
+    }
+
+    form button {
+        align-self: center;
+    }
+
+    #resultado {
+        margin-top: 20px;
+        color: #16a34a;
+        font-weight: bold;
+    }
+
+    /* RODAPÉ */
+    footer {
+        background: #111827;
+        color: white;
+        text-align: center;
+        padding: 25px;
+    }
+
+    /* RESPONSIVO */
+    @media (max-width: 768px) {
+        nav {
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        nav ul {
+            gap: 15px;
+        }
+
+        .hero h2 {
+            font-size: 2.3rem;
+        }
+
+        .cards {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
+
+</head> <body>
+<!-- MENU -->
+<header>
+    <nav>
+        <h1>MeuSite</h1>
+
+        <ul>
+            <li><a href="#inicio">Início</a></li>
+            <li><a href="#sobre">Sobre</a></li>
+            <li><a href="#servicos">Serviços</a></li>
+            <li><a href="#contato">Contato</a></li>
+        </ul>
+    </nav>
+</header>
+
+<!-- INÍCIO -->
+<section class="hero" id="inicio">
+    <div>
+        <h2>Bem-vindo ao MeuSite</h2>
+
+        <p>
+            Um site moderno feito com HTML, CSS e JavaScript.
+        </p>
+
+        <button class="botao" id="botao">
+            Clique aqui
+        </button>
+    </div>
+</section>
+
+<!-- SOBRE -->
+<section id="sobre">
+    <div class="sobre">
+        <h2>Sobre Nós</h2>
+
+        <p>
+            Este é um exemplo de site completo criado em apenas
+            um arquivo HTML. O CSS está dentro da tag
+            <strong>&lt;style&gt;</strong> e o JavaScript está
+            dentro da tag <strong>&lt;script&gt;</strong>.
+        </p>
+    </div>
+</section>
+
+<!-- SERVIÇOS -->
+<section class="servicos" id="servicos">
+
+    <h2>Nossos Serviços</h2>
+
+    <div class="cards">
+
+        <div class="card">
+            <h3>Desenvolvimento</h3>
+            <p>
+                Criamos sites modernos, rápidos e responsivos
+                para diferentes tipos de projetos.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Design</h3>
+            <p>
+                Interfaces bonitas e fáceis de usar para
+                proporcionar uma boa experiência.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Suporte</h3>
+            <p>
+                Manutenção e melhorias para manter seu projeto
+                sempre atualizado.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- CONTATO -->
+<section id="contato">
+
+    <div class="contato">
+
+        <h2>Entre em Contato</h2>
+
+        <p>
+            Preencha o formulário abaixo.
+        </p>
+
+        <form id="formulario">
+
+            <input
+                type="text"
+                id="nome"
+                placeholder="Seu nome"
+                required
+            >
+
+            <input
+                type="email"
+                id="email"
+                placeholder="Seu e-mail"
+                required
+            >
+
+            <textarea
+                id="mensagem"
+                placeholder="Digite sua mensagem"
+                required
+            ></textarea>
+
+            <button class="botao" type="submit">
+                Enviar mensagem
+            </button>
+
+        </form>
+
+        <p id="resultado"></p>
+
+    </div>
+
+</section>
+
+<!-- RODAPÉ -->
+<footer>
+    <p>
+        © 2026 MeuSite - Todos os direitos reservados.
+    </p>
+</footer>
+
+
+<!-- JAVASCRIPT -->
+<script>
+
+    // Botão principal
+    const botao = document.getElementById("botao");
+
+    botao.addEventListener("click", function() {
+
+        alert("Olá! Seja bem-vindo ao nosso site!");
+
+    });
+
+
+    // Formulário
+    const formulario = document.getElementById("formulario");
+
+    const resultado = document.getElementById("resultado");
+
+    formulario.addEventListener("submit", function(event) {
+
+        event.preventDefault();
+
+        const nome = document.getElementById("nome").value;
+
+        resultado.textContent =
+            "Obrigado, " + nome + "! Sua mensagem foi enviada.";
+
+        formulario.reset();
+
+    });
+
+</script>
+
+</body> </html>
